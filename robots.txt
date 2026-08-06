@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap will be published at production domain
+Sitemap: https://www.upswinggrowth.com/sitemap.xml
