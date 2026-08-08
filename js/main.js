@@ -259,8 +259,13 @@
   function validateField(input) {
     const name = input.getAttribute("name") || "";
     const value = (input.value || "").trim();
+    const isRequired = input.hasAttribute("required");
 
-    if (input.hasAttribute("required") && !value) {
+    if (!isRequired && !value) {
+      return "";
+    }
+
+    if (isRequired && !value) {
       return "This field is required.";
     }
 
@@ -274,6 +279,10 @@
       if (!isValidEmail(value)) {
         return "Please enter a valid work email.";
       }
+    }
+
+    if (name === "message" && value.length > 800) {
+      return "Please keep this under 800 characters.";
     }
 
     return "";
@@ -314,7 +323,7 @@
 
     const status = form.querySelector("[data-form-status]");
     const success = form.querySelector("[data-form-success]");
-    const fields = form.querySelectorAll("[data-validate], input[required]");
+    const fields = form.querySelectorAll("[data-validate], input[required], textarea[data-validate]");
 
     fields.forEach(function (input) {
       input.addEventListener("blur", function () {

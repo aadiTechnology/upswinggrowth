@@ -69,7 +69,7 @@
     <!-- Component & layout styles -->
     <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- Favicon placeholder -->
+    <!-- Favicon (inline SVG until brand assets are published) -->
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M8 20 L16 8 L24 20' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 20 H21' stroke='%2314B8A6' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E"
@@ -173,11 +173,11 @@
 
         <nav class="nav-desktop" aria-label="Primary">
           <a class="nav-desktop__link" href="index.html" aria-current="page">Home</a>
-          <a class="nav-desktop__link" href="#how-it-works">How It Works</a>
-          <a class="nav-desktop__link" href="#features">Features</a>
-          <a class="nav-desktop__link" href="#industries">Industries</a>
-          <a class="nav-desktop__link" href="#faq">FAQ</a>
-          <a class="nav-desktop__link" href="#cta">Get Strategy</a>
+          <a class="nav-desktop__link" href="features.html">Features</a>
+          <a class="nav-desktop__link" href="solutions.html">Solutions</a>
+          <a class="nav-desktop__link" href="how-it-works.html">How It Works</a>
+          <a class="nav-desktop__link" href="about.html">About</a>
+          <a class="nav-desktop__link" href="contact.html">Contact</a>
         </nav>
 
         <div class="header-actions">
@@ -216,25 +216,19 @@
             <a class="nav-mobile__link" href="index.html" aria-current="page">Home</a>
           </li>
           <li>
-            <a class="nav-mobile__link" href="#how-it-works">How It Works</a>
+            <a class="nav-mobile__link" href="features.html">Features</a>
           </li>
           <li>
-            <a class="nav-mobile__link" href="#features">Features</a>
+            <a class="nav-mobile__link" href="solutions.html">Solutions</a>
           </li>
           <li>
-            <a class="nav-mobile__link" href="#benefits">Benefits</a>
+            <a class="nav-mobile__link" href="how-it-works.html">How It Works</a>
           </li>
           <li>
-            <a class="nav-mobile__link" href="#industries">Industries</a>
+            <a class="nav-mobile__link" href="about.html">About</a>
           </li>
           <li>
-            <a class="nav-mobile__link" href="#why-us">Why Us</a>
-          </li>
-          <li>
-            <a class="nav-mobile__link" href="#faq">FAQ</a>
-          </li>
-          <li>
-            <a class="nav-mobile__link" href="#cta">Get Strategy</a>
+            <a class="nav-mobile__link" href="contact.html">Contact</a>
           </li>
         </ul>
         <div class="nav-mobile__cta">
@@ -242,7 +236,7 @@
             Get Your Personalized Marketing Strategy
           </a>
           <p class="nav-mobile__cta-hint">Free strategy request · no commitment</p>
-          <a class="btn btn--secondary btn--full" href="#cta" title="Talk with our team about your goals">
+          <a class="btn btn--secondary btn--full" href="contact.html" title="Talk with our team about your goals">
             Contact Our Team
           </a>
         </div>
@@ -294,7 +288,7 @@
               <div class="cta-group">
                 <a
                   class="btn btn--secondary btn--full btn--full-sm"
-                  href="#cta"
+                  href="contact.html"
                   title="Talk through your goals with a real person"
                 >
                   Contact Our Team
@@ -360,7 +354,7 @@
                   <div class="dashboard__toolbar">
                     <div>
                       <span class="dashboard__heading">Marketing Hub</span>
-                      <span class="dashboard__sub">Riverside Dental · Personalized strategy</span>
+                      <span class="dashboard__sub">Demo Business · Personalized strategy</span>
                     </div>
                     <span class="badge badge--accent badge--sm">
                       <i data-lucide="sparkles" aria-hidden="true"></i>
@@ -732,7 +726,7 @@
                 </ul>
                 <a
                   class="btn btn--secondary"
-                  href="#cta"
+                  href="contact.html"
                   title="Talk with our team about your marketing goals"
                 >
                   Contact Our Team
@@ -2022,9 +2016,18 @@
               novalidate
               aria-label="Request your personalized marketing strategy"
               data-strategy-form
+              data-demo-form
             >
+              <div class="form-demo-banner" role="note">
+                <i data-lucide="info" aria-hidden="true"></i>
+                <p>
+                  Front-end demo only: this form validates and shows a success state locally. A live
+                  submission endpoint is not connected yet, so your message is not delivered.
+                </p>
+              </div>
               <p class="cta-form__reassure">
-                About 2 minutes. No credit card. No auto-publishing. We’ll only use this to prepare your strategy.
+                About 2 minutes. No credit card. No auto-publishing. We’ll only use this to prepare your strategy
+                once a live endpoint is connected.
               </p>
               <div class="cta-form__fields">
                 <div class="cta-form__field">
@@ -2073,7 +2076,7 @@
                     required
                     minlength="2"
                     maxlength="120"
-                    placeholder="e.g. Riverside Dental Clinic"
+                    placeholder="e.g. Demo Business Name"
                     aria-describedby="business-hint business-error"
                     data-validate="business"
                   />
@@ -2112,9 +2115,11 @@
                 <span class="cta-form__success-icon" aria-hidden="true">
                   <i data-lucide="circle-check"></i>
                 </span>
-                <p class="cta-form__success-title">Request received</p>
+                <p class="cta-form__success-title">Demo complete — nothing was sent</p>
                 <p class="cta-form__success-text">
-                  Thank you. Our team will follow up with your personalized marketing strategy.
+                  Your details were validated in the browser only. A live submission endpoint is not
+                  connected yet, so no message was delivered. When the backend is ready, this form will
+                  send your request to our team.
                 </p>
               </div>
               <p class="cta-form__note" role="status" data-form-status hidden></p>
@@ -2189,14 +2194,13 @@
             <p class="footer__cta-hint">Start with a strategy shaped for your business — free request.</p>
           </div>
 
-          <div>
+            <div>
             <h2 class="footer__heading">Product</h2>
             <ul class="footer__links">
-              <li><a class="footer__link" href="#features">Features</a></li>
-              <li><a class="footer__link" href="#how-it-works">How It Works</a></li>
+              <li><a class="footer__link" href="features.html">Features</a></li>
+              <li><a class="footer__link" href="solutions.html">Solutions</a></li>
+              <li><a class="footer__link" href="how-it-works.html">How It Works</a></li>
               <li><a class="footer__link" href="#walkthrough">After You Click</a></li>
-              <li><a class="footer__link" href="#industries">Industries</a></li>
-              <li><a class="footer__link" href="#objections">Common Concerns</a></li>
               <li><a class="footer__link" href="#faq">FAQ</a></li>
             </ul>
           </div>
@@ -2204,12 +2208,11 @@
           <div>
             <h2 class="footer__heading">Company</h2>
             <ul class="footer__links">
+              <li><a class="footer__link" href="about.html">About</a></li>
+              <li><a class="footer__link" href="contact.html">Contact</a></li>
               <li><a class="footer__link" href="#solution">Platform</a></li>
               <li><a class="footer__link" href="#why-us">Why Us</a></li>
               <li><a class="footer__link" href="#trust">Trust</a></li>
-              <li><a class="footer__link" href="#cta">Contact</a></li>
-              <!-- Full pages from sitemap arrive in later sprints -->
-              <li><span class="footer__link" aria-disabled="true">About</span></li>
             </ul>
           </div>
 
@@ -2218,7 +2221,7 @@
             <p class="footer__newsletter-text">
               Product updates and growth tips. Newsletter coming soon.
             </p>
-            <form class="footer__newsletter-form" action="#" method="post" aria-label="Newsletter placeholder">
+            <form class="footer__newsletter-form" action="#" method="post" aria-label="Newsletter signup unavailable">
               <label class="sr-only" for="newsletter-email">Email address</label>
               <input
                 class="footer__newsletter-input"
@@ -2234,7 +2237,7 @@
                 Notify me
               </button>
             </form>
-            <p class="footer__newsletter-note">Placeholder — enable when signup is ready.</p>
+            <p class="footer__newsletter-note">Available when signup is ready.</p>
             <div class="footer__legal-links">
               <h3 class="footer__heading footer__heading--sm">Legal</h3>
               <ul class="footer__links">
